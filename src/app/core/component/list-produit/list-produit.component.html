@@ -1,0 +1,160 @@
+<div class="">
+  @if (resultsProdAVendre?.length != 0) {
+  <h1
+    class="w-2/3 py-2 mx-auto my-10 text-4xl font-bold text-center border-b-2 border-neutral-200 text-neutral-800"
+  >
+    Produits a Vendre
+  </h1>
+  <div class="flex flex-wrap justify-around">
+    @for (item of resultsProdAVendre; track $index) {
+    <div class="w-72 hover:shadow-2xl Parent border-1 shadow-black">
+      <div class="p-5 mx-auto border-2 h-80 image border-neutral-300">
+        @if (item.photos != null) {
+        <img
+          class="object-contain h-[100%] object-center"
+          src="assets/imageUpLoad/{{ item.photos.split(',')[0] }}"
+          alt=""
+        />
+        } @if (item.photos == null) {
+        <img
+          class="object-contain h-[100%] object-center"
+          src="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+          alt=""
+        />
+        }
+      </div>
+      <div class="flex justify-around">
+        <p class="py-3 text-sm font-semibold text-center">{{ item.libelle }}</p>
+      </div>
+      <div class="flex justify-center py-3">
+        <a
+          (click)="addPanier(item.id)"
+          role="button"
+          class="AddPanier inline-block text-xxl rounded bg-blue-900 hover:text-neutral-800 text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-gray-300 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-gray-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-gray-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
+          >ajouter au panier</a
+        >
+      </div>
+      <div class="flex justify-center py-3">
+        <a
+          routerLink="/public/produit/detail/{{ item.id }}"
+          role="button"
+          class="Details inline-block text-xxl rounded bg-gray-300 text-neutral-800 text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-gray-300 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-gray-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-gray-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
+          >details</a
+        >
+      </div>
+    </div>
+    }
+  </div>
+
+  <div class="mb-32">
+    <app-pagination
+      [data]="dataPagination"
+      (OnGetNumberPage)="paginateAV($event)"
+    ></app-pagination>
+  </div>
+  } @if (resultsProdALouer?.length != 0) {
+  <h1
+    class="w-2/3 py-2 mx-auto my-10 text-4xl font-bold text-center border-b-2 border-neutral-200 text-neutral-800"
+  >
+    Produits a Louer
+  </h1>
+  <div class="flex flex-wrap justify-around">
+    @for (item of resultsProdALouer; track $index) {
+    <div class="w-72 hover:shadow-2xl Parent border-1 shadow-black">
+      <div class="p-5 mx-auto border-2 h-80 image border-neutral-300">
+        @if (item.photos != null) {
+        <img
+          class="object-contain h-[100%] object-center"
+          src="assets/imageUpLoad/{{ item.photos.split(',')[0] }}"
+          alt=""
+        />
+        } @if (item.photos == null) {
+        <img
+          class="object-contain object-center"
+          src="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+          alt=""
+        />
+        }
+      </div>
+      <div class="flex justify-around">
+        <p class="py-3 text-sm font-semibold text-center">{{ item.libelle }}</p>
+      </div>
+      <div class="flex justify-center py-3">
+        <a
+          (click)="addPanier(item.id)"
+          role="button"
+          class="AddPanier inline-block text-xxl rounded bg-blue-900 hover:text-neutral-800 text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-gray-300 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-gray-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-gray-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
+          >ajouter au panier</a
+        >
+      </div>
+      <div class="flex justify-center py-3">
+        <a
+          routerLink="/public/produit/detail/{{ item.id }}"
+          role="button"
+          class="Details inline-block text-xxl rounded bg-gray-300 text-neutral-800 text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-gray-300 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-gray-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-gray-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
+          >details</a
+        >
+      </div>
+    </div>
+    }
+  </div>
+  <div class="mb-32">
+    <app-pagination
+      [data]="dataPaginationAL"
+      (OnGetNumberPage)="paginateAL($event)"
+    ></app-pagination>
+  </div>
+  } @if (resultsService?.length != 0) {
+  <h1
+    class="w-2/3 py-2 mx-auto my-10 text-4xl font-bold text-center border-b-2 border-neutral-200 text-neutral-800"
+  >
+    Services
+  </h1>
+  <div class="flex flex-wrap justify-around">
+    @for (item of resultsService; track $index) {
+    <div class="w-72 hover:shadow-2xl Parent border-1 shadow-black">
+      <div class="p-5 mx-auto border-2 h-80 image border-neutral-300">
+        @if (item.photos != null) {
+        <img
+          class="object-contain h-[100%] object-center"
+          src="assets/imageUpLoad/{{ item.photos.split(',')[0] }}"
+          alt=""
+        />
+        } @if (item.photos == null) {
+        <img
+          class="object-contain object-center"
+          src="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+          alt=""
+        />
+        }
+      </div>
+      <div class="flex justify-around">
+        <p class="py-3 text-sm font-semibold text-center">{{ item.libelle }}</p>
+      </div>
+      <div class="flex justify-center py-3">
+        <a
+          (click)="addPanier(item.id)"
+          role="button"
+          class="AddPanier inline-block text-xxl rounded bg-blue-900 hover:text-neutral-800 text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-gray-300 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-gray-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-gray-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
+          >ajouter au panier</a
+        >
+      </div>
+      <div class="flex justify-center py-3">
+        <a
+          role="button"
+          routerLink="/public/produit/detail/{{ item.id }}"
+          class="Details inline-block text-xxl rounded bg-gray-300 text-neutral-800 text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-gray-300 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-gray-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-gray-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
+          >details</a
+        >
+      </div>
+    </div>
+    }
+  </div>
+  <div class="mb-32">
+    <app-pagination
+      [data]="dataPaginationSE"
+      (OnGetNumberPage)="paginateSE($event)"
+    ></app-pagination>
+  </div>
+  }
+</div>

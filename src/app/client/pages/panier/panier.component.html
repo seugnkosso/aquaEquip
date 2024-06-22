@@ -1,0 +1,73 @@
+<section class="">
+  <div class="flex items-center justify-around py-5 text-xl font-semibold">
+    <div class="">
+      total de la commande : {{ totalCommandes
+      }}<span class="text-red-600">FR</span>
+    </div>
+    <div class="">
+      <a
+        (click)="commander()"
+        role="button"
+        class="inline-block rounded bg-blue-900 text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-blue-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
+        >passer la commande</a
+      >
+    </div>
+  </div>
+  <div class="">
+    @if (listProduits?.length != 0) {
+    <h1
+      class="w-2/3 py-2 mx-auto my-10 text-4xl font-bold text-center border-b-2 border-neutral-200 text-neutral-800"
+    >
+      Produits
+    </h1>
+    <div class="flex flex-wrap justify-center gap-5">
+      @for (item of listProduits; track $index) {
+      <div class="w-72 hover:shadow-2xl Parent border-1 shadow-black">
+        <div class="p-5 mx-auto border-2 h-80 image border-neutral-300">
+          @if (item.photos != null) {
+          <img
+            class="object-contain h-[100%] object-center"
+            src="assets/imageUpLoad/{{ item.photos.split(',')[0] }}"
+            alt=""
+          />
+          } @if (item.photos == null) {
+          <img
+            class="object-contain h-[100%] object-center"
+            src="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+            alt=""
+          />
+          }
+        </div>
+        <div class="">
+          <div class="flex justify-between">
+            <p class="px-8 py-3 text-xl font-semibold">{{ item.libelle }}</p>
+            <p class="px-8 py-3 text-xl font-semibold">
+              {{ item.prixVente }}<span class="text-xl text-red-600">Fr</span>
+            </p>
+          </div>
+          <p class="px-8 py-3 text-xl font-semibold">
+            quantite : {{ item.quantite }}
+          </p>
+        </div>
+        <div class="flex justify-center py-3">
+          <a
+            (click)="supprimer(item.idProduit)"
+            role="button"
+            class="AddPanier inline-block text-xxl rounded bg-blue-900 hover:text-neutral-800 text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-gray-300 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-gray-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-gray-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
+            >supprimer</a
+          >
+        </div>
+        <div class="flex justify-center py-3">
+          <a
+            role="button"
+            class="Details inline-block text-xxl rounded bg-gray-300 text-neutral-800 text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-gray-300 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-gray-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-gray-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
+            >total : {{ item.total }}<span class="text-red-600">FR</span>
+          </a>
+        </div>
+      </div>
+      }
+    </div>
+
+    }
+  </div>
+</section>

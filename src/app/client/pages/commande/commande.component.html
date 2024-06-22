@@ -1,0 +1,44 @@
+<div class="pb-[7rem]">
+  <div class="">
+    <!-- Table responsive wrapper -->
+    <div class="overflow-x-auto bg-white dark:bg-neutral-700">
+      <!-- Table -->
+      <table class="min-w-full text-sm text-left whitespace-nowrap">
+        <!-- Table head -->
+        <thead class="tracking-wider uppercase">
+          <tr>
+            <th scope="col" class="px-6 py-3">date</th>
+            <th scope="col" class="px-6 py-3">client</th>
+            <th scope="col" class="px-6 py-3">total</th>
+            <th scope="col" class="px-6 py-3"></th>
+          </tr>
+        </thead>
+
+        <!-- Table body -->
+        <tbody>
+          @for (item of listCommandes?.results; track $index) {
+          <tr class="">
+            <th scope="row" class="px-6 py-3">{{ item.date }}</th>
+            <td class="px-6 py-3">{{ item.client }}</td>
+            <td class="px-6 py-3">{{ item.total }}</td>
+            <td class="px-6 py-3 text-right">
+              <a
+                routerLink="/client/details-commande/{{ item.id }}"
+                role="button"
+                class="inline-block rounded bg-blue-500 text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-blue-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
+                >details</a
+              >
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="">
+    <app-pagination
+      [data]="dataPagination"
+      (OnGetNumberPage)="paginate($event)"
+    ></app-pagination>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<section class="flex gap-4">
+  <div
+    class="w-2/3 bg-center bg-no-repeat bg-cover p-14 h-[28rem]"
+    style="background-image: url('assets/img/accueil1.jpg')"
+  >
+    <div class="font-medium text-white">
+      <p class="pr-32 mb-4 text-4xl">
+        Prêt pour démarrer votre projet aquacole ou aquariologie ?
+      </p>
+      <a
+        href="#"
+        role="button"
+        class="inline-block text-xxl rounded bg-white text-neutral-800 text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-gray-300 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-gray-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-gray-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
+        >CONTACTEZ-NOUS</a
+      >
+    </div>
+  </div>
+  <div class="flex flex-col w-1/3 gap-4 h-[28rem]">
+    <div
+      class="w-full bg-center bg-no-repeat bg-cover h-1/2"
+      style="background-image: url('assets/img/accdroite1.jpg')"
+    ></div>
+    <div
+      class="w-full bg-center bg-no-repeat bg-cover h-1/2"
+      style="background-image: url('assets/img/accdroite2.jpg')"
+    ></div>
+  </div>
+</section>
+<section class="my-5">
+  <div class="">
+    <h1 class="my-5 text-5xl font-semibold text-neutral-500">
+      Bienvenue sur le site officiel d'AquaEquip
+    </h1>
+    <h2 class="my-3 text-3xl font-semibold text-red-600">
+      AquaEquip, fournisseur d’équipements, de services et de matériels pour
+      l’aquaculture et l’aquariologie
+    </h2>
+    <p class="my-3 text-justify">
+      La mission d'AquaEquip va au-delà de la simple transaction commerciale.<br />
+      Elle s'inscrit dans une vision à long terme visant à promouvoir la
+      durabilité, la traçabilité et la responsabilité sociale au sein de la
+      chaîne d'approvisionnement piscicole. <br />
+      En collaborant avec des partenaires du secteur, des chercheurs et des
+      organismes de régulation, l'entreprise contribue activement à façonner des
+      pratiques exemplaires et des normes élevées, assurant ainsi la pérennité
+      de l'industrie dans un monde en constante évolution.
+    </p>
+    <h2 class="my-3 text-3xl font-semibold text-red-600">
+      “Transformez vos rêves aquatiques en réalité avec AQUAEQUIP”
+    </h2>
+  </div>
+</section>
+
+<section class="my-10">
+  <app-list-produit
+    [resultsProdAVendre]="resultsProdAVendre"
+    [resultsProdALouer]="resultsProdALouer"
+    [resultsService]="resultsService"
+    [dataPagination]="dataPaginationAV"
+    (OnPaginateAV)="OnPaginateAV($event)"
+    [dataPaginationAL]="dataPaginationAL"
+    (OnPaginateAL)="OnPaginateAL($event)"
+    [dataPaginationSE]="dataPaginationSE"
+    (OnPaginateSE)="OnPaginateSE($event)"
+  ></app-list-produit>
+</section>

@@ -1,0 +1,85 @@
+<section class="static bottom-0 left-0 right-0 h-96">
+  <div class="flex justify-end gap-3 py-4 pr-[20%] items-center bg-neutral-800">
+    <h1 class="text-2xl font-bold text-white">Nous suivre</h1>
+    <div class="rounded-full">
+      <svg
+        class="w-[35px] rounded-full h-[35px] fill-[#8e8e8e]"
+        viewBox="0 0 320 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+        <path
+          d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+        ></path>
+      </svg>
+    </div>
+    <div class="">
+      <svg
+        class="w-[35px] rounded-full h-[35px] fill-[#8e8e8e]"
+        viewBox="0 0 448 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+        <path
+          d="M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+  <div class="h-full bg-neutral-950">
+    <div class="flex pt-12 justify-around gap-2 w-[75%] mx-auto">
+      <div class="">
+        <h1 class="text-xl font-bold text-white">Categorie</h1>
+        <div class="my-2 text-gray-400">
+          <p class="py-1 py-2 cursor-pointer hover:text-white">
+            <a routerLink="/public/categorie/1">Bacs, bassins</a>
+          </p>
+          <p class="py-1 py-2 cursor-pointer hover:text-white">
+            <a routerLink="/public/categorie/2">Vivier</a>
+          </p>
+          <p class="py-1 py-2 cursor-pointer hover:text-white">
+            <a routerLink="/public/categorie/3">Filets et épuisettes</a>
+          </p>
+          <p class="py-1 py-2 cursor-pointer hover:text-white">
+            <a routerLink="/public/categorie/4">Système de nourrissage</a>
+          </p>
+          <p class="py-1 py-2 cursor-pointer hover:text-white">
+            <a routerLink="/public/categorie/5">Transport de poisson</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="">
+        <h1 class="text-xl font-bold text-white">Mon Compte</h1>
+
+        <div class="my-2 text-gray-400">
+          <p class="py-1 py-2 cursor-pointer hover:text-white">
+            <a routerLink="/client/commande">Mes commandes</a>
+          </p>
+          <p class="py-1 py-2 hover:text-white">
+            <a routerLink="">Mes informations personnelles</a>
+          </p>
+        </div>
+      </div>
+      <div class="">
+        <h1 class="text-xl font-bold text-white">Contact</h1>
+
+        <div class="my-2 text-gray-400">
+          <p class="py-1 py-2 cursor-pointer hover:text-white">
+            <a routerLink="/public/categorie/1">AquaEquip</a>
+          </p>
+          <p class="py-1 py-2 cursor-pointer hover:text-white">
+            <a routerLink="/public/categorie/1"
+              >Appeler nous <span>+221 77 233 49 46</span>
+            </a>
+          </p>
+          <p class="py-1 py-2 cursor-pointer hover:text-white">
+            <a routerLink="/public/categorie/1"
+              >E-mail : <span>{{ email }}</span></a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

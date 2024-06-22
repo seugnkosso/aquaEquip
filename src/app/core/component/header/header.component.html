@@ -1,0 +1,22 @@
+<nav
+  class="flex justify-between px-56 text-sm font-bold text-white bg-[#64CAEA]"
+>
+  <div class="py-[0.1rem]">
+    Appelez-nous au : <span class="">+221 77 233 49 46</span>
+  </div>
+  <div class="flex">
+    <div
+      class="px-2 py-[0.1rem] border-l-2 border-r-2 border-white hover:bg-neutral-800"
+    >
+      <a href="">Contactez-nous</a>
+    </div>
+
+    <div class="px-2 py-[0.1rem] border-r-2 border-white hover:bg-neutral-800">
+      @if (idUser != null) {
+      <a class="cursor-pointer" (click)="deconnexion()">deconnexion</a>
+      } @if(idUser == null){
+      <a class="cursor-pointer" routerLink="/login">Connexion</a>
+      }
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,15 @@
+.AddPanier {
+  display: none;
+}
+.Details {
+  display: none;
+}
+.Parent:hover .AddPanier {
+  display: block;
+}
+.Parent:hover .Details {
+  display: block;
+}
+.Parent:hover .image {
+  border-bottom: 1.5rem solid black;
+}
